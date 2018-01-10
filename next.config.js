@@ -2,7 +2,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
 	//distDir: "docs",
-	assetPrefix: isProd ? 'https://shengoo.github.io/hello-next/' : '',
+	//assetPrefix: isProd ? 'https://shengoo.github.io/hello-next/' : '',
 	exportPathMap: function() {
 		return {
 			'/': { page: '/' },

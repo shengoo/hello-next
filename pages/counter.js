@@ -1,4 +1,5 @@
 import {Component} from 'react'
+import Layout from '../components/MyLayout'
 
 const step = 1;
 
@@ -10,7 +11,11 @@ class Counter extends Component{
 	}
 
 	componentDidMount(){
-		setInterval(this.increment.bind(this),1000);	
+		this.timer = setInterval(this.increment.bind(this),1000);	
+	}
+
+	componentWillUnmount(){
+		clearInterval(this.timer);
 	}
 
 	increment(){
@@ -19,7 +24,9 @@ class Counter extends Component{
 
 	render(){
 		return (
-			<div>counter: { this.state.number }</div>
+			<Layout>
+				<div>counter: { this.state.number }</div>
+			</Layout>
 		)
 	}
 
